@@ -4,6 +4,7 @@ import styles from './layout.module.css';
 import utilStyles from '../src/styles/utils.module.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Utterances from './Utterances';
 
 const name = 'Hwang Dohyun';
 export const siteTitle = 'My Next Blog';
@@ -97,9 +98,12 @@ export default function Layout({ children, home }) {
         </header>
         <main>{children}</main>
         {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">← Back to home</Link>
-          </div>
+          <>
+            <Utterances />
+            <div className={styles.backToHome}>
+              <Link href="/">← Back to home</Link>
+            </div>
+          </>
         )}
       </div>
     </div>
